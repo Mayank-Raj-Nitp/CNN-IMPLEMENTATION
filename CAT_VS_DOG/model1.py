@@ -31,7 +31,7 @@ data_augmentation = keras.Sequential([
 
 inputs = keras.Input(shape=(180, 180, 3))
 x = data_augmentation(inputs) 
-x = layers.Rescaling(1./255)(x) # image pixel values are in the range of 0-255 so we are converting it to 0-1 
+x = layers.Rescaling(1./255)(x)  
 x = layers.Conv2D(filters = 32, kernel_size = 3, activation="relu")(x) 
 #  downsampling
 x = layers.MaxPooling2D(2)(x)
