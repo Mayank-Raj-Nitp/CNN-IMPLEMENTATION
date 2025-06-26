@@ -63,6 +63,12 @@ callbacks = [
         filepath="bestmodel.keras",
         save_best_only=True,
         monitor="val_loss"
+    ),
+          
+    keras.callbacks.EarlyStopping(
+        monitor="val_loss",       
+        patience=5,               
+        restore_best_weights=True 
     )
 ]
 history = model.fit(
